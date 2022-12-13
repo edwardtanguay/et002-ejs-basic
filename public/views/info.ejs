@@ -1,4 +1,8 @@
 <%-include('_header.ejs')%>
-	<p>This is the info page.</p>
-	<a href="/">go back home</a>
+    <p>These are our current books:</p>
+    <div class="books">
+        <% siteData.books.forEach(book=> {%>
+            <img src="https://edwardtanguay.vercel.app/share/images/techBooks/<%=book.idCode%>.jpg"/>
+        <%})%>
+    </div>
 <%-include('_footer.ejs')%>
