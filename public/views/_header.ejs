@@ -10,14 +10,24 @@
 	<link rel="stylesheet"
 		  href="/css/main.css">
 	<title>
-		<%=appTitle%>
+		<%=siteData.appTitle%>
 	</title>
 </head>
 
 <body>
 	<h1>
-		<%=appTitle%>
+		<%=siteData.appTitle%>
 	</h1>
 	<nav>
-		nav bar...
-	</nav>
+        <% siteData.pages.forEach(page=> {%>
+            <%if(page.path===currentPath) {%>
+                <a href="<%=page.path%>" class="active">
+                    <%=page.title%>
+                </a>
+            <%} else {%>
+                <a href="<%=page.path%>">
+                    <%=page.title%>
+                </a>
+            <%}%>
+        <%})%>
+    </nav>
